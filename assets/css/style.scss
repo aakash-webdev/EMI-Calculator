@@ -1,0 +1,293 @@
+//* ========================================== Common SCSS starts here ========================================= */
+
+// Theme Toggle Button Importing
+@import url("themeButton.css");
+
+// Variables
+$font: "Mulish", sans-serif;
+$blue: #2d5be5;
+$yellow: #f9ba25;
+$grey: #989898;
+$black: #021526;
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: $font;
+  background-image: url(../images/v960-ning-05.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+::placeholder {
+  font-family: $font;
+  font-size: 19px;
+  color: $grey;
+}
+
+img {
+  max-width: 100%;
+}
+
+a {
+  display: inline-block;
+}
+
+// Layout
+.container {
+  width: 100%;
+  margin: 0 auto;
+}
+
+/* ======================================== Common SCSS ends here ========================================= */
+
+/* -/-/-/-/-/-/-/-/-/-/- Main SCSS starts here -/-/-/-/-/-/-/-/-/-/- */
+
+main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+
+  // ------------ Theme Toggle Switch ------------ //
+
+  .theme_toggle {
+    margin-bottom: 20px;
+  }
+
+  .emi_calc {
+    display: flex;
+    background-color: white;
+    color: $black;
+    align-items: center;
+    padding: 40px 10px;
+    margin: 0 80px;
+    border-radius: 100px 10px 100px 10px;
+    box-shadow: rgba(0, 0, 0, 0.25) 0px 54px 55px,
+      rgba(0, 0, 0, 0.12) 0px -12px 30px, rgba(0, 0, 0, 0.12) 0px 4px 6px,
+      rgba(0, 0, 0, 0.17) 0px 12px 13px, rgba(0, 0, 0, 0.09) 0px -3px 5px;
+    transition: all 0.35s ease-in-out;
+
+    // Left Section
+    .left_sec {
+      width: 50%;
+      border-right: 1px solid $grey;
+      padding: 0 30px;
+
+      .main_img {
+        margin-bottom: 30px;
+        animation: myAnim 2.5s ease-in-out 0s infinite alternate-reverse none;
+        @keyframes myAnim {
+          0% {
+            transform: translateY(0);
+          }
+
+          100% {
+            transform: translateY(-20px);
+          }
+        }
+      }
+
+      .result {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 20px 0;
+        border: 1px solid $grey;
+        padding: 8px 5px;
+        border-radius: 8px;
+        box-shadow: rgba(0, 0, 0, 0.15) 0px 5px 15px 0px;
+
+        .output {
+          color: $blue;
+          font-size: 22px;
+          line-height: 28px;
+        }
+
+        p {
+          font-size: 17px;
+          font-weight: 800;
+          letter-spacing: 1px;
+
+          i {
+            font-size: 16px;
+          }
+        }
+
+        .output {
+          font-weight: 900;
+          letter-spacing: 2px;
+        }
+      }
+    }
+
+    // Right Section
+    .right_sec {
+      width: 50%;
+      padding: 0 30px;
+
+      #main_form {
+        // Button SCSS
+
+        .cssbuttons-io-button {
+          background: $blue;
+          color: white;
+          font-family: inherit;
+          padding: 0.35em;
+          padding-left: 2.2em;
+          font-size: 18px;
+          font-weight: 500;
+          border-radius: 8px;
+          border: none;
+          letter-spacing: 0.05em;
+          display: flex;
+          align-items: center;
+          box-shadow: inset 0 0 1.6em -0.6em $blue;
+          overflow: hidden;
+          position: relative;
+          height: 3em;
+          padding-right: 7rem;
+          cursor: pointer;
+        }
+
+        .cssbuttons-io-button .icon {
+          background: white;
+          color: $blue;
+          font-size: 1.5em;
+          margin-left: 1em;
+          position: absolute;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          height: 1.5em;
+          width: 1.5em;
+          border-radius: 8px;
+          box-shadow: 0.1em 0.1em 0.6em 0.2em $blue;
+          right: 0.3em;
+          transition: all 0.5s;
+        }
+
+        .cssbuttons-io-button:hover .icon {
+          width: calc(100% - 0.6em);
+        }
+
+        .cssbuttons-io-button .icon svg {
+          width: 1.1em;
+          transition: transform 0.3s;
+          color: $blue;
+        }
+
+        .cssbuttons-io-button:hover .icon svg {
+          transform: translateX(0.1em);
+        }
+
+        .cssbuttons-io-button:active .icon {
+          transform: scale(0.95);
+        }
+
+        // Input Container
+        .input_container {
+          display: flex;
+
+          // Input Icon
+          .icon {
+            padding: 15px;
+            line-height: 25px;
+            font-size: 25px;
+            background-color: $blue;
+            color: white;
+            border-radius: 8px 0 0 8px;
+          }
+
+          // Input
+          input {
+            width: 100%;
+            padding: 0 10px;
+            border: none;
+            outline: none;
+            border-bottom: 3px solid $grey;
+            font-size: 26px;
+            line-height: 32px;
+            letter-spacing: 2px;
+            font-family: "Kanit", sans-serif;
+            box-shadow: inset 0px 0px 7px 3px rgba(0, 0, 0, 0.31);
+
+            &:focus {
+              border-bottom: 3px solid $blue;
+            }
+          }
+        }
+        .input_error {
+          margin: 5px 0 30px 50px;
+          color: red;
+          font-size: 14px;
+          font-weight: 700;
+          letter-spacing: 1px;
+          font-style: italic;
+          height: 15px;
+        }
+      }
+    }
+  }
+}
+
+// Dark Theme
+.emi_calc.dark {
+  background-color: $black;
+  color: white;
+}
+
+/* -/-/-/-/-/-/-/-/-/-/- Main SCSS ends here -/-/-/-/-/-/-/-/-/-/- */
+
+// =============================================== Media Query =============================================== //
+
+@media only screen and (max-width: 1200px) {
+  main .emi_calc {
+    display: block;
+    margin: 30px 30px;
+  }
+  main .emi_calc .left_sec {
+    width: auto;
+    border-right: 0;
+    padding: 0 30px 12px;
+    border-bottom: 1px solid #989898;
+    margin: 0px 0 30px;
+  }
+  main .emi_calc .left_sec .result {
+    display: block;
+  }
+  main .emi_calc .left_sec .result .output {
+    font-size: 20px;
+    line-height: 26px;
+    margin: 7px 0 0;
+  }
+  main .emi_calc .right_sec {
+    width: auto;
+  }
+  main .emi_calc .right_sec #main_form .input_container input {
+    font-size: 24px;
+    padding: 0 9px;
+
+    &::placeholder {
+      font-size: 13px;
+      letter-spacing: 0;
+      font-weight: 700;
+    }
+  }
+  main .emi_calc .right_sec #main_form .input_error {
+    margin: 5px 0 15px 36px;
+  }
+  main .emi_calc .right_sec #main_form .input_container .icon {
+    font-size: 24px;
+  }
+  main .theme_toggle {
+    margin-top: 20px;
+    margin-bottom: 0;
+  }
+}

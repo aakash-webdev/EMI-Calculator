@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <!--===== Google Fonts CDN =====-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@300;400;500;600;700&family=Mukta:wght@200;300;400;500;600;700;800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Edu+AU+VIC+WA+NT+Hand:wght@400..700&family=Hind+Siliguri:wght@300;400;500;600;700&family=Kanit:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Mukta:wght@200;300;400;500;600;700;800&family=Mulish:ital,wght@0,200..1000;1,200..1000&family=Noto+Sans:ital,wght@0,100..900;1,100..900&family=Prompt:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+        rel="stylesheet">
+
+    <!--===== Font Awesome CDN =====-->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--===== SCSS =====-->
+    <link rel="stylesheet" href="assets/css/style.css">
+</head>
+
+<body>
+
+    <!-- Main starts here -->
+    <main>
+
+        <div class="theme_toggle">
+            <div class="theme-switch">
+                <input type="checkbox" id="theme-checkbox" />
+                <label for="theme-checkbox">
+                    <div></div>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path fill-rule="evenodd"
+                                d="M9.528 1.718a.75.75 0 01.162.819A8.97 8.97 0 009 6a9 9 0 009 9 8.97 8.97 0 003.463-.69.75.75 0 01.981.98 10.503 10.503 0 01-9.694 6.46c-5.799 0-10.5-4.701-10.5-10.5 0-4.368 2.667-8.112 6.46-9.694a.75.75 0 01.818.162z"
+                                clip-rule="evenodd"></path>
+                        </svg>
+                    </span>
+                    <span>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="currentColor" class="w-6 h-6">
+                            <path
+                                d="M12 2.25a.75.75 0 01.75.75v2.25a.75.75 0 01-1.5 0V3a.75.75 0 01.75-.75zM7.5 12a4.5 4.5 0 119 0 4.5 4.5 0 01-9 0zM18.894 6.166a.75.75 0 00-1.06-1.06l-1.591 1.59a.75.75 0 101.06 1.061l1.591-1.59zM21.75 12a.75.75 0 01-.75.75h-2.25a.75.75 0 010-1.5H21a.75.75 0 01.75.75zM17.834 18.894a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 10-1.061 1.06l1.59 1.591zM12 18a.75.75 0 01.75.75V21a.75.75 0 01-1.5 0v-2.25A.75.75 0 0112 18zM7.758 17.303a.75.75 0 00-1.061-1.06l-1.591 1.59a.75.75 0 001.06 1.061l1.591-1.59zM6 12a.75.75 0 01-.75.75H3a.75.75 0 010-1.5h2.25A.75.75 0 016 12zM6.697 7.757a.75.75 0 001.06-1.06l-1.59-1.591a.75.75 0 00-1.061 1.06l1.59 1.591z">
+                            </path>
+                        </svg>
+                    </span>
+                </label>
+            </div>
+
+        </div>
+
+
+        <div class="emi_calc" id="dark_mode">
+
+            <!------------ Left section starts here ------------>
+            <div class="left_sec">
+
+                <!-- Main image -->
+                <div class="main_img">
+                    <img src="assets/images/undraw_savings_re_eq4w.svg" alt="People with cash image" width="400px"
+                        id="main_img">
+                </div>
+
+                <!-- EMI calculator Result -->
+
+                <div class="result">
+                    <p class="result_label"><i class="fa-solid fa-circle-arrow-right"></i> Monthly Emi:</p>
+                    <p id="monthly_emi" class="output">₹ ----</p>
+                </div>
+
+                <div class="result">
+                    <p class="result_label"><i class="fa-solid fa-circle-arrow-right"></i> Principle Amount:</p>
+                    <p id="principle_amount" class="output">₹ ----</p>
+                </div>
+
+                <div class="result">
+                    <p class="result_label"><i class="fa-solid fa-circle-arrow-right"></i> Total Interest:</p>
+                    <p id="total_interest" class="output">₹ ----</p>
+                </div>
+
+                <div class="result">
+                    <p class="result_label"><i class="fa-solid fa-circle-arrow-right"></i> Amount Payable:</p>
+                    <p id="amount_payable" class="output">₹ ----</p>
+                </div>
+
+            </div>
+            <!------------ Left section ends here ------------>
+
+
+            <!------------ Right section starts here ------------>
+            <div class="right_sec">
+
+                <!-- Form starts here -->
+                <form action="#" id="main_form">
+
+                    <!-- Loan Amount -->
+                    <div class="input_container">
+                        <i class="fa-solid fa-indian-rupee-sign icon"></i>
+                        <input type="number" name="loan_amount" id="loan_amount" placeholder="Loan Amount" pattern="\d*"
+                            autocomplete="off">
+                    </div>
+                    <p class="input_error" id="loan_amount_error"></p>
+
+                    <!-- Interest Rate -->
+                    <div class="input_container">
+                        <i class="fa-solid fa-percent icon"></i>
+                        <input type="number" name="interest_rate" id="interest_rate" placeholder="Interest Rate (p.a.)"
+                            pattern="\d*" autocomplete="off">
+                    </div>
+                    <p class="input_error" id="interest_rate_error"></p>
+
+                    <!-- Loan Tenure -->
+                    <div class="input_container">
+                        <i class="fa-solid fa-calendar-days icon"></i>
+                        <input type="number" name="loan_term" id="loan_term" placeholder="Loan Tenure (1-10 Years)"
+                            pattern="\d*" autocomplete="off">
+                    </div>
+                    <p class="input_error" id="loan_term_error"></p>
+
+                    <!-- Button -->
+                    <div class="btn">
+                        <button class="cssbuttons-io-button" id="calculate_btn">
+                            Calculate
+                            <div class="icon">
+                                <i class="fa-solid fa-calculator"></i>
+                            </div>
+                        </button>
+                    </div>
+
+                </form>
+                <!-- Form ends here -->
+
+            </div>
+            <!------------ Right section ends here ------------>
+
+        </div>
+    </main>
+    <!-- Main ends here -->
+
+    <!--===== JS =====-->
+    <script src="assets/js/main.js"></script>
+</body>
+
+</html>
